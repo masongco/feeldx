@@ -5,19 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simple Website</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
   <!-- Sticky Header -->
   <header class="header">
-    <div class="logo">YourLogo</div>
-    <nav class="nav-links">
+    <div class="logo">
+        <img src="images/feeldx_logo.svg" alt="Logo" />
+    </div>
+    <button class="hamburger" aria-label="Open navigation" aria-controls="navMenu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-links" id="navMenu">
       <a href="#about">About</a>
       <a href="#studio">Studio</a>
       <a href="#control">Project Control</a>
       <a href="#services">Services</a>
       <a href="#technology">Technology</a>
       <a href="#work">Our Work</a>
+      <a href="#contact" class="btn nav-contact-btn">Contact Us</a>
     </nav>
     <div class="contact-btn">
       <a href="#contact" class="btn">Contact Us</a>
@@ -39,9 +49,347 @@
   <!-- Quote Section -->
   <section class="quote">
     <p>
-      "We push beyond visual representation, integrating and connecting with your project's requirements, bringing them to life and enhancing clarity to create a truly immersive experience."
+      We push beyond visual representation, integrating and connecting with your project's requirements, bringing them to life and enhancing clarity to create a truly immersive experience.
     </p>
   </section>
 
+  <section class="bg-light">
+    <div class="container">
+        <div class="container-title">
+            <h1>Our Capabilities</h1>
+        </div>
+        <div class="container-content">
+            <p>Our team specialises in leveraging storytelling to transform intricate concepts. We skillfully uncover the underlying purpose of each project and translate it into compelling visual content that resonates personally with each audience. Whether embarking on a large-scale construction project, enhancing existing infrastructure, or initiating an entirely new endeavor, our approach accommodates projects of all sizes and complexities across diverse industries.</p>
+        </div>
+    </div>
+        <div class="section-title">SECTORS</div>
+        <div class="grid">
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="cog"></i>
+            <span>AEC Industry</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="server"></i>
+            <span>Data Centres</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="shield"></i>
+            <span>Defence</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="trophy"></i>
+            <span>Sports and Recreation</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="landmark"></i>
+            <span>Government and Councils</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="heart-pulse"></i>
+            <span>Health and Aged Care</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="book-open"></i>
+            <span>Education</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="mountain"></i>
+            <span>Mining</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="traffic-cone"></i>
+            <span>Civil/Infrastructure</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="home"></i>
+            <span>Residential</span>
+        </div>
+        <div class="sector-item">
+            <i class="lucide icon" data-lucide="car"></i>
+            <span>Automotive</span>
+        </div>
+        <button class="btn dark">View Our Work →</button>
+    </div>
+
+    <div class="section-title">SERVICES</div>
+    <div class="section-subtitle">Visualisation</div>
+    <div class="section-content">
+       <div class="grid">
+        <div class="service-item">
+            <span>Content Strategy</span>
+        </div>
+        <div class="service-item">
+            <span>Storytelling</span>
+        </div>
+        <div class="service-item">
+            <span>3D Visualisation</span>
+        </div>
+        <div class="service-item">
+            <span>BIM 3D,4D,5D</span>
+        </div>
+        <div class="service-item">
+            <span>Multimedia Design</span>
+        </div>
+        <button class="btn dark">Read More →</button>
+    </div>
+
+    <div class="section-subtitle">Project Control</div>
+    <div class="section-content">
+        <div class="grid">
+            <div class="service-item">
+                <span>Construction Life Cycle Management</span>
+            </div>
+            <div class="service-item">
+                <span>Project Control & Project Management</span>
+            </div>
+            <div class="service-item">
+                <span>Tender Programmes</span>
+            </div>
+            <div class="service-item">
+                <span>Construction Programme</span>
+            </div>
+            <div class="service-item">
+                <span>Project Forensic Analysis (NOD/EOT Claims & Scheduling)</span>
+            </div>
+            <button class="btn dark">Read More →</button>
+        </div>
+    </div>
+
+    <div class="section-subtitle">Education</div>
+    <div class="section-content">
+        <div class="grid">
+            <div class="service-item">
+                <span>Education & Training</span>
+            </div>
+            <button class="btn dark">Read More →</button>
+        </div>
+    </div>
+  </section>
+
+
+
+<section class="bg-white">
+    <div class="container">
+        <div class="container-title">
+            <h1>Our Technology</h1>
+        </div>
+        <div class="container-content">
+            <p>Our processes and solutions allow for the intelligent integration of several technologies, including extended reality, 3D Visualisations, 4D & 5D BIM, business intelligence, smart analytics and specialist construction planning.</p>
+        </div>
+    </div>
+        <div class="section-title">TECHNOLOGY</div>
+        <div class="grid">
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="grid"></i>
+            <p class="technology-item-title">AR/VR/MR</p>
+            <p class="technology-item-content">
+                Immersive experiences for training, visualization, and design.
+            </p>
+        </div>
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="aperture"></i>
+            <p class="technology-item-title">High Resolution Renders</p>
+            <p class="technology-item-content">
+                Photorealistic outputs for stakeholder presentations.
+            </p>
+        </div>
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="drone"></i>
+            <p class="technology-item-title">Flythrough</p>
+            <p class="technology-item-content">
+                Virtual tours of construction and real estate spaces.
+            </p>
+        </div>
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="film"></i>
+            <p class="technology-item-title">Custom Animations</p>
+            <p class="technology-item-content">
+                Tailored animations to showcase project flows and data.
+            </p>
+        </div>
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="box"></i>
+            <p class="technology-item-title">3D Modelling</p>
+            <p class="technology-item-content">
+                Precision 3D models for planning and simulation.
+            </p>
+        </div>
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="boxes"></i>
+            <p class="technology-item-title">3D/4D Visualisations</p>
+            <p class="technology-item-content">
+                Timeline-integrated design visualizations.
+            </p>
+        </div>
+        <div class="technology-item">
+            <i class="lucide icon" data-lucide="layout-template"></i>
+            <p class="technology-item-title">5D BIM Planning</p>
+            <p class="technology-item-content">
+                Integrated cost and time analysis in BIM workflows.
+            </p>
+        </div>
+        <button class="btn dark">Read More →</button>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container">
+        <div class="container-title">
+            <h1>Our Clients</h1>
+        </div>
+        <div class="container-content">
+            <p>We help businesses thrive with cutting-edge technology and project control solutions and continue to work with an incredible portfolio of clients.</p>
+        </div>
+    </div>
+    <section class="client-carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <img src="images/clients/client-1.jpg" alt="Client 1" />
+          <img src="images/clients/client-2.jpg" alt="Client 2" />
+          <img src="images/clients/client-3.webp" alt="Client 3" />
+          <img src="images/clients/client-4.jpg" alt="Client 4" />
+          <img src="images/clients/client-5.png" alt="Client 5" />
+          <img src="images/clients/client-6.png" alt="Client 6" />
+          <img src="images/clients/client-7.png" alt="Client 7" />
+          <img src="images/clients/client-8.jpg" alt="Client 8" />
+          <img src="images/clients/client-9.jpg" alt="Client 9" />
+          <img src="images/clients/client-10.png" alt="Client 10" />
+        </div>
+      </section>
+  </section>
+
+  <section class="testimonials bg-light">
+    <div class="container">
+        <div class="container-title">
+            <h1>Testimonials</h1>
+        </div>
+    </div>
+    <div class="carousel-container">
+      <button class="prev">&#10094;</button>
+  
+      <div class="carousel-track">
+        <div class="card">
+          <p>Quality of visuals and attention to detail captured the intent of our programme and methodology.</p>
+          <h4>Estimating Manager</h4>
+          <h4>Tier 2 VIC</h4>
+        </div>
+        <div class="card">
+          <p>Thank you team, just had a look – everything looks really well put together! Thanks again for being so responsive and making the process easy for us. You brought the story to life and helped portray the end vision to the client. Well done.</p>
+          <h4>National Brand & Submissions Coordinator Tender Manager</h4>
+          <h4>Tier 3 - NSW & VIC</h4>
+        </div>
+        <div class="card">
+          <p>Combined with their technical understanding on how to plan and build efficiently and safely, FeelDX’s visualisation team was a breeze to deal with. Quality of visuals and attention to detail captured the intent of our programme and methodology.</p>
+          <h4>Estimating Manager Estimating Manager</h4>
+          <h4>Tier 3 - VIC</h4>
+        </div>
+        <div class="card">
+          <p>You brought the story to life and helped portray the end vision to the client. Well done. Combined with their technical understanding on how to plan and build efficiently and safely, FeelDX’s visualisation team was a breeze to deal with.</p>
+          <h4>Tender Manager Estimating Manager</h4>
+          <h4>TIER 2 NSW</h4>
+        </div>
+      </div>
+  
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/feeldx-logo-tagline.svg" alt="FeelDX Logo">
+        </div>
+      <div class="footer-section">
+        <h4>Australia</h4>
+        <a href="https://www.google.com/maps?ll=-37.914091,145.219448&z=15&t=m&hl=en&gl=LK&mapclient=embed&cid=7883058899986422010">
+            <p><strong>VIC HEAD OFFICE</strong><br> 1800 333 539</p>
+        </a>
+        <a href="https://www.google.com/maps?ll=-33.88643,151.208806&z=15&t=m&hl=en&gl=LK&mapclient=embed&cid=10725948804314822433">
+            <p><strong>NSW</strong><br> 1800 333 539</p>
+        </a>
+        <a href="https://www.google.com/maps?ll=-27.465997,153.030625&z=15&t=m&hl=en&gl=LK&mapclient=embed&cid=4150877066074359224">
+            <p><strong>QLD</strong><br> 1800 333 539</p>
+        </a>
+        <a href="https://www.google.com/maps?ll=-31.967655,115.892508&z=15&t=m&hl=en&gl=LK&mapclient=embed&cid=3027721591422168661">
+            <p><strong>WA</strong><br> 1800 333 539</p>
+        </a>
+      </div>
+  
+      <div class="footer-section">
+        <h4>Global Offices</h4>
+        <a href="https://maps.app.goo.gl/zcV4g2AYM5QHTjFN7">
+            <p><strong>Mauritius</strong><br> +230 403 4421</p>
+        </a>
+        <a href="https://maps.app.goo.gl/7nYsZw2RrHdY94wn6">
+            <p><strong>USA, California – Irvine</strong></p>
+        </a>
+        <a href="https://maps.app.goo.gl/UtuQr5M5Ef6G61N17">
+            <p><strong>Vietnam, Ho Chi Minh</strong></p>
+        </a>
+      </div>
+  
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/feeldx" aria-label="Facebook"><div class="icon-container"><i class="fab fa-facebook-f"></i></div></a>
+          <a href="https://www.instagram.com/feeldx/" aria-label="Instagram"><div class="icon-container"><i class="fab fa-instagram"></i></div></a>
+          <a href="https://www.linkedin.com/company/feeldx" aria-label="LinkedIn"><div class="icon-container"><i class="fab fa-linkedin-in"></i></div></a>
+          <a href="https://www.youtube.com/channel/UC9kmR0LVnaZahPLxodFdesQ" aria-label="YouTube"><div class="icon-container"><i class="fab fa-youtube"></i></div></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Privacy policy | © 2025 FeelDX. All rights reserved
+    </div>
+  </footer>  
+  
+  
+<script>
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.card');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let currentSlide = 0;
+    const cardsPerSlide = 3;
+    const totalSlides = Math.ceil(cards.length / cardsPerSlide);
+
+    function updateCarousel() {
+    const slideWidth = cards[0].offsetWidth + 20; // 20 = gap
+    track.style.transform = `translateX(-${currentSlide * slideWidth * cardsPerSlide}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateCarousel();
+    }
+    });
+
+    prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+    }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+
+</script>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('open');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+</script>
+  
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
