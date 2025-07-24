@@ -257,39 +257,39 @@
       </section>
   </section>
 
-  <section class="testimonials bg-light">
+  <section class="testimonials bg-light testimonial-carousel">
     <div class="container">
         <div class="container-title">
             <h1>Testimonials</h1>
         </div>
     </div>
     <div class="carousel-container">
-      <button class="prev">&#10094;</button>
-  
       <div class="carousel-track">
         <div class="card">
           <p>Quality of visuals and attention to detail captured the intent of our programme and methodology.</p>
           <h4>Estimating Manager</h4>
-          <h4>Tier 2 VIC</h4>
+          <h5>Tier 2 VIC</h5>
         </div>
         <div class="card">
           <p>Thank you team, just had a look – everything looks really well put together! Thanks again for being so responsive and making the process easy for us. You brought the story to life and helped portray the end vision to the client. Well done.</p>
           <h4>National Brand & Submissions Coordinator Tender Manager</h4>
-          <h4>Tier 3 - NSW & VIC</h4>
+          <h5>Tier 3 - NSW & VIC</h5>
         </div>
         <div class="card">
           <p>Combined with their technical understanding on how to plan and build efficiently and safely, FeelDX’s visualisation team was a breeze to deal with. Quality of visuals and attention to detail captured the intent of our programme and methodology.</p>
           <h4>Estimating Manager Estimating Manager</h4>
-          <h4>Tier 3 - VIC</h4>
+          <h5>Tier 3 - VIC</h5>
         </div>
         <div class="card">
           <p>You brought the story to life and helped portray the end vision to the client. Well done. Combined with their technical understanding on how to plan and build efficiently and safely, FeelDX’s visualisation team was a breeze to deal with.</p>
           <h4>Tender Manager Estimating Manager</h4>
-          <h4>TIER 2 NSW</h4>
+          <h5>TIER 2 NSW</h5>
         </div>
       </div>
-  
-      <button class="next">&#10095;</button>
+      <div class="carousel-buttons">
+        <button class="prev" aria-label="Previous testimonial">&#10094;</button>
+        <button class="next" aria-label="Next testimonial">&#10095;</button>
+      </div>
     </div>
   </section>
 
@@ -345,36 +345,102 @@
   
   
 <script>
-    const track = document.querySelector('.carousel-track');
-    const cards = document.querySelectorAll('.card');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
+    // Only target the testimonial carousel
+    const testimonialSection = document.querySelector('.testimonial-carousel');
+    if (testimonialSection) {
+        const track = testimonialSection.querySelector('.carousel-track');
+        const cards = testimonialSection.querySelectorAll('.card');
+        const prevBtn = testimonialSection.querySelector('.prev');
+        const nextBtn = testimonialSection.querySelector('.next');
 
-    let currentSlide = 0;
-    const cardsPerSlide = 3;
-    const totalSlides = Math.ceil(cards.length / cardsPerSlide);
+        let currentSlide = 0;
+        let cardsPerSlide = window.innerWidth <= 900 ? 1 : 3;
+        let totalSlides = Math.ceil(cards.length / cardsPerSlide);
 
-    function updateCarousel() {
-    const slideWidth = cards[0].offsetWidth + 20; // 20 = gap
-    track.style.transform = `translateX(-${currentSlide * slideWidth * cardsPerSlide}px)`;
+        function updateCarousel() {
+            cardsPerSlide = window.innerWidth <= 900 ? 1 : 3;
+            totalSlides = Math.ceil(cards.length / cardsPerSlide);
+            const slideWidth = cards[0].offsetWidth + (window.innerWidth <= 900 ? 12 : 20); // gap
+            track.style.transform = `translateX(-${currentSlide * slideWidth * cardsPerSlide}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            // Snap to nearest slide on resize
+            cardsPerSlide = window.innerWidth <= 900 ? 1 : 3;
+            totalSlides = Math.ceil(cards.length / cardsPerSlide);
+            currentSlide = Math.max(0, Math.min(currentSlide, totalSlides - 1));
+            updateCarousel();
+        });
+        updateCarousel(); // Initial position
+
+        // --- Draggable functionality ---
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID;
+
+        function setTrackTranslate(x) {
+            track.style.transform = `translateX(${x}px)`;
+        }
+
+        function getCurrentTranslate() {
+            const style = window.getComputedStyle(track);
+            const matrix = new WebKitCSSMatrix(style.transform);
+            return matrix.m41;
+        }
+
+        function onDragStart(e) {
+            isDragging = true;
+            startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            prevTranslate = getCurrentTranslate();
+            track.style.transition = 'none';
+            document.body.style.cursor = 'grabbing';
+        }
+
+        function onDragMove(e) {
+            if (!isDragging) return;
+            const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            const dx = x - startX;
+            currentTranslate = prevTranslate + dx;
+            setTrackTranslate(currentTranslate);
+        }
+
+        function onDragEnd() {
+            isDragging = false;
+            track.style.transition = '';
+            document.body.style.cursor = '';
+            // Snap to nearest slide
+            const slideWidth = cards[0].offsetWidth + (window.innerWidth <= 900 ? 12 : 20);
+            let slide = Math.round(-currentTranslate / (slideWidth * cardsPerSlide));
+            slide = Math.max(0, Math.min(slide, totalSlides - 1));
+            currentSlide = slide;
+            updateCarousel();
+        }
+
+        // Mouse events
+        track.addEventListener('mousedown', onDragStart);
+        window.addEventListener('mousemove', onDragMove);
+        window.addEventListener('mouseup', onDragEnd);
+        // Touch events
+        track.addEventListener('touchstart', onDragStart);
+        window.addEventListener('touchmove', onDragMove);
+        window.addEventListener('touchend', onDragEnd);
     }
-
-    nextBtn.addEventListener('click', () => {
-    if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        updateCarousel();
-    }
-    });
-
-    prevBtn.addEventListener('click', () => {
-    if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-    }
-    });
-
-    window.addEventListener('resize', updateCarousel);
-
 </script>
 
 <script>
