@@ -1,0 +1,103 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #111;
+  }
+  
+  /* Header */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .contact-btn .btn {
+    background-color: #004225;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  /* Hero Banner */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, #004225, #026440);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons .btn {
+    background-color: white;
+    color: #004225;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero-buttons .btn.secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+  
+  /* Quote Section */
+  .quote {
+    background-color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .quote p {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }  
